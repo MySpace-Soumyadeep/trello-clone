@@ -2,7 +2,7 @@
 
 import { useBoardStore } from '@/store/BoardStore';
 import React, { useEffect } from 'react'
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd';
 import Column from './Column';
 
 function Board() {
@@ -15,7 +15,7 @@ function Board() {
 
   const handleDragEnd = (result : DropResult) => {
     const {destination, source, type} = result
-    console.log( {destination, source, type});
+    // console.log( {destination, source, type});
     
     // if outside the box
     if(!destination) return

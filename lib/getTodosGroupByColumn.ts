@@ -41,7 +41,8 @@ console.log({columns});
 
     // sort columns
 
-    const sortedColumns = new Map([...columns.entries()].sort((a,b) => colType.indexOf(a[0]) - colType.indexOf(b[0])))
+    // const sortedColumns = new Map([...columns.entries()].sort((a,b) => colType.indexOf(a[0]) - colType.indexOf(b[0])))
+    const sortedColumns = new Map(Array.from(columns.entries()).sort((a,b) => colType.indexOf(a[0]) - colType.indexOf(b[0])))
     console.log({sortedColumns});
     
 

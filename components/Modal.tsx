@@ -1,5 +1,5 @@
 'use client'
-import { useState, Fragment, useRef } from 'react'
+import { useState, Fragment, useRef, FormEvent } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useModalStore } from '@/store/ModalStore'
 import { useBoardStore } from '@/store/BoardStore'
@@ -23,6 +23,8 @@ function Modal() {
       const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(!newTaskInput) return;
+        // console.log("add task", {newTaskInput, newTaskType, image});
+        
         addTask(newTaskInput, newTaskType, image)
         setImage(null)
         closeModal()
